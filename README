@@ -1,0 +1,70 @@
+ miner_profiler.sh - Ver 1.0.0 - Copyright (C) by WormFood, 27 Mar 2014                 
+
+ The function of this program, is to run your GPU at various settings, and  
+ record the output of bfgminer, so that you can compare different settings  
+ to determine the best settings for your GPUs. While this program was
+ written for bfgminer, it should be easily adapted to just about any other
+ system.
+
+
+      ,           ,   This program is free software: you can redistribute   
+     /             \   it and/or  modify it  under the  terms of  the GNU   
+    ((__-^^-,-^^-__))   General Public  License as  published by the Free   
+     `-_---' `---_-'   Software  Foundation,  either  version  3  of  the   
+      `--|o` 'o|--'   License,  or  (at  your option) any  later version.   
+         \  `  /                                                            
+          ): :(   This program is  distributed in the  hope that it  will   
+          :o_o:   be useful,  but WITHOUT ANY WARRANTY; without  even the   
+           "-"   implied  warranty  of MERCHANTABILITY  or FITNESS  FOR A   
+                PARTICULAR PURPOSE.   See the GNU General  Public License   
+    for more details.                                                       
+                                                                            
+   You should have received a copy of the GNU General Public License        
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.    
+
+
+ Command line options are as follows:                                       
+ -i --intensity <start> [<stop> [<step> [<default>]]]                       
+ -t --thread-concurrency <start> [<stop> [<step> [<default>]]]              
+ -e --engine <start> [<stop> [<step> [<default>]]]                          
+ -m --memory <start> [<stop> [<step> [<default>]]]                          
+ -o --options <options to pass to the miner> (NOTE: MUST be last option     
+ -c --config <config> path to configuration file to use for default values  
+ -n --no-execute do a dry run, and don't actually execute anything          
+ -l --limit <OCL card > limit testing to a single card                     
+ -h --help                                                                  
+ -M --minutes <runtime> how many minutes to run each test for               
+ -g --gpu-count <gpu count> 0=autodetect number of GPUs to test             
+ -E --miner-exe <bfgminer> path to bfgminer executable                      
+ -a --after-test-config <config> path to configuration file to use, after   
+                         all tests are complete. (don't want that GPU idle) 
+ -u --underclock allow underclocked tests (where memory < engine)           
+ -v --verbose use multiple times to increase the number of messages         
+ -d --dry-run dont do anything, just show what would have been done         
+ -s --skip-sanity-tests not implemented, but planned for in a future release
+
+ start = setting to start at                                                
+ stop = setting to stop at                                                  
+ step = step size                                                           
+ default = settings to use, when the number of tests to not exactly match   
+           the number of GPUs. For example, if you have 3 GPUs, and you     
+           4 tests, then the default will be used for the other 2 cards,    
+           that are not part of the test. This option will NEVER be used    
+           if you have only one GPU.                                        
+
+ debug 1-3 user informational messages 4-6 extra information 7-9 debug info 
+ 0 - none. no extra messages                                                
+ 1 - basic useful informational messages                                    
+ 2 - little bit more information                                            
+ 3 - few users would find this info useful, but still for users             
+ 4 -                                                                        
+ 5 -                                                                        
+ 6 -                                                                        
+ 7 - option processing                                                      
+ 8 -                                                                        
+ 9 - every little thing is printed out                                      
+
+If you find this program useful, and want to consider donating some LTC to
+me, as a symbol of your appreciation.
+
+Any donations sent to LZjzxpx4P9z4A9BMhQKnBswu7ELkJ8a9Ut are greatly appreciated.
